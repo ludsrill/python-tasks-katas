@@ -28,3 +28,13 @@ output "lambda_function_arn" {
   value       = aws_lambda_function.api.arn
 }
 
+output "terraform_state_bucket" {
+  description = "S3 bucket for Terraform state"
+  value       = aws_s3_bucket.terraform_state.id
+}
+
+output "terraform_lock_table" {
+  description = "DynamoDB table for Terraform state locking"
+  value       = aws_dynamodb_table.terraform_lock.name
+}
+
