@@ -1,0 +1,20 @@
+name: Lint
+
+on:
+  push:
+    branches: [ ludsrill ]
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.11-slim
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install ruff
+        run: pip install ruff
+      
+      - name: Run ruff check
+        run: ruff check .
+
