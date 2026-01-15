@@ -8,9 +8,6 @@ terraform {
     }
   }
 
-  # Backend S3 - Descomenta después de crear el bucket y DynamoDB
-  # Ejecuta primero: terraform apply (sin backend)
-  # Luego descomenta esto y ejecuta: terraform init -migrate-state
   backend "s3" {
     bucket         = "codewars-katas-terraform-state-343218193902"
     key            = "codewars-katas/terraform.tfstate"
